@@ -18,10 +18,10 @@ setup(
     author_email='hi@benjie.me',
     license='MIT',
     packages=['microsat_util'],
-    scripts=['bin/features.py', 'bin/cloudcov.py'],
+    scripts=['bin/georef.py', 'bin/cloudcov.py'],
     entry_points={
         'console_scripts': [
-            'features=features:main',
+            'georef=georef:main',
             'cloudcov=cloudcov:main'
         ]
     },

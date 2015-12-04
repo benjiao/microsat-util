@@ -1,2 +1,4 @@
+from microsat_util import cloudcov
+
 def main():
-    print "The Cloud Cov Thing"
+    print "Computing Cloud Cover Percentage..."
