@@ -3,7 +3,7 @@ A micro satellite data processing toolkit
 
 # Features
 
-## Georeferencing
+### Georeferencing
 
 [WIP] Georeference an image
 ```
@@ -21,4 +21,4 @@ $ georef-match <file1> <file2> -o <output_file>
 ```
 
 
-## Cloud Coverage Percentage Computation
+### Cloud Coverage Percentage Computation
