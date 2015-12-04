@@ -1,0 +1,2 @@
+def cloudcov():
+    print "Hello!"

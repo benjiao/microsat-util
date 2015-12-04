@@ -8,7 +8,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='microsat-uitl',
+    name='microsat-util',
     version='0.1.0',
     description='A sample Python project',
     long_description=long_description,
@@ -18,6 +18,13 @@ setup(
     author_email='hi@benjie.me',
     license='MIT',
     packages=['microsat_util'],
+    scripts=['bin/features.py', 'bin/cloudcov.py'],
+    entry_points={
+        'console_scripts': [
+            'features=features:main',
+            'cloudcov=cloudcov:main'
+        ]
+    },
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
