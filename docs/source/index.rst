@@ -1,6 +1,3 @@
-Microsat Util
-=============
-
 Table of Contents
 ^^^^^^^^^^^^^^^^^
 
