@@ -16,14 +16,16 @@ setup(
 
     author='Benjie Jiao',
     author_email='hi@benjie.me',
-    license='MIT',
     packages=['microsat_util'],
     scripts=['bin/georef.py', 'bin/cloudcov.py'],
     entry_points={
         'console_scripts': [
             'georef=georef:main',
-            'cloudcov=cloudcov:main'
+            'georef-keypoints=georef:get_keypoints'
         ]
+    },
+    install_requires={
+        'numpy', 'scipy'
     },
     classifiers=[
         'Development Status :: 3 - Alpha',
