@@ -17,11 +17,12 @@ setup(
     author='Benjie Jiao',
     author_email='hi@benjie.me',
     packages=['microsat_util'],
-    scripts=['bin/georef.py', 'bin/cloudcov.py'],
+    scripts=['scripts/georef.py', 'scripts/cloudcov.py'],
     entry_points={
         'console_scripts': [
             'georef=georef:main',
-            'georef-keypoints=georef:get_keypoints'
+            'georef-keypoints=georef:get_keypoints',
+            'georef-matches=georef:get_matches'
         ]
     },
     install_requires={

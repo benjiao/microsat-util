@@ -1,7 +1,5 @@
 import cv2
-
-
-__all__ = ['sift']
+from microsat_util import utils
 
 
 class DetectedFeatures():
@@ -14,7 +12,7 @@ def sift(image_path):
     Detects keypoints based on the SIFT detector. To use:
 
     ```
-    results = detect('images/up.google.jpg')
+    results = detectors.sift('images/up.google.jpg')
 
     output_image = results.output_image
     keypoints = results.keypoints
@@ -23,10 +21,6 @@ def sift(image_path):
 
     @param image_path: The path to the image to be analyzed
     @type  image_path: string
-
-    @param show: Toggles whether or not to show the marked image in a pop up
-                 after detection
-    @type  show: boolean
 
     @return: a named tuple containing results of the surf detection algorithm
     @rtype: <DetectedFeatures> with the following attributes:
@@ -61,7 +55,7 @@ def surf(image_path, hessian_threshold=400):
     Detects keypoints based on the SURF detector. To use:
 
     ```
-    results = detect('images/up.google.jpg')
+    results = detectors.surf('images/up.google.jpg')
 
     output_image = results.marked_image
     keypoints = results.keypoints
@@ -94,13 +88,17 @@ def surf(image_path, hessian_threshold=400):
     surf = cv2.SURF(hessian_threshold)
     keypoints, descriptors = surf.detectAndCompute(input_image, None)
 
-    # Draw keypoints on output image
-    output_image = cv2.drawKeypoints(input_image, keypoints, None, (255, 0, 0), 4)
-
     # Build output
     output = DetectedFeatures()
     output.input_image = input_image
-    output.output_image = output_image
     output.keypoints = keypoints
     output.descriptors = descriptors
     return output
+
+
+def draw_keypoints(input_image, keypoints):
+    """
+    Draws a set of keypoints on to an image. Initially implemented
+    as a wrapper for cv2's drawKeypoints function
+    """
+    return cv2.drawKeypoints(input_image, keypoints, None, (255, 0, 0), 4)
